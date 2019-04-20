@@ -1,0 +1,14 @@
+{
+  "name": "parametric",
+  "version": "1.0.0",
+  "description": "Parametric curves plotter",
+  "main": "index.js",
+  "author": "Stéphane Klein",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "serve": "http-server"
+  }
+}

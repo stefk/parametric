@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  background: #061004;
+  color: #747474;
+  font-style: italic;
+  font-size: 16px;
+}
+
+h1 {
+  margin-top: 0;
+  padding: 0 7% 0 0;
+  text-align: right;
+  border-bottom: dashed #747474 2px;
+  font-variant: all-petite-caps;
+  font-size: 24px;
+}
+
+.container {
+  text-align: center;
+}
+
+.inputs, .buttons {
+  margin: 6px 0 12px;
+  text-align: center;
+}
+
+input[type=text] {
+  width: 120px;
+  padding: 3px;
+  margin-right: 8px;
+  background: black;
+  color: #eee;
+  border: solid 1px #747474;
+}
+
+input[type=range] {
+  width: 100px;
+  vertical-align: middle;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 10px;
+  background: black;
+  border: solid 1px #747474;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 26px;
+  width: 14px;
+  border-radius: 2px;
+  border: solid 1px #747474;
+  margin-top: -7px;
+}
+
+button {
+  color: #747474;
+  background: black;
+  border: solid 1px #300e96;
+}
+
+button:hover {
+  border-color: 603ec6;
+}
+
+button:active {
+  color: black;
+  background: #747474;
+  border: black;
+}
+
+canvas {
+  width: 90%;
+  margin: 10px;
+  border: double 4px #300e96;
+}
+
+@media (min-width: 620px) {
+  canvas {
+    width: 42%;
+  }
+}

@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Parametric | Plotter</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+  <h1>Parametric</h1>
+  <form>
+    <div class="inputs">
+      <label>
+        x =
+        <input
+          type="text"
+          name="x-fn"
+          autocapitalize="none"
+          autocorrect="off"
+        />
+      </label>
+      <label>
+        y =
+        <input
+          type="text"
+          name="y-fn"
+          autocapitalize="none"
+          autocorrect="off"
+        />
+      </label>
+      <label>
+        1
+        <input
+          type="range"
+          name="precision"
+          min="1"
+          max="100"
+        />
+        100
+      </label>
+    </div>
+    <div class="buttons">
+      <button type="submit">Draw</button>
+      <button type="button">Example</button>
+    </div>
+  </form>
+  <div class="container">
+    <canvas id="cartesian" width="300" height="300"></canvas>
+    <canvas id="polar" width="300" height="300"></canvas>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.9.0/math.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
