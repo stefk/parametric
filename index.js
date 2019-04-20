@@ -1,7 +1,6 @@
 (() => {
   const inputX = document.querySelector("[name=x-fn]");
   const inputY = document.querySelector("[name=y-fn]");
-  const precision = document.querySelector("[type=range]");
   const submit = document.querySelector("[type=submit]");
   const example = document.querySelector("[type=button]");
   const canvas1 = document.querySelector("#cartesian");
@@ -27,29 +26,35 @@
   });
 
   const examples = [
-    ["t * 100", "t", 0.01],
-    ["t", "1 + sin(t * 4)", 0.05],
-    ["t", "2 + abs(sin(t * 7)) / 3", 0.1],
-    ["t / 2", "tan(t)", 0.1],
-    ["sin(t * 6) * t", "t", 0.05],
+    ["cos(t)", "sin(t)"],
+    ["2 * cos(t)^3", "2 * sin(t)^3"],
+    ["log(t) - sin(t)", "sin(t)"],
+    ["t * 100", "t"],
+    ["t", "1 + sin(t * 4)"],
+    ["t", "2 + abs(sin(t * 7)) / 3"],
+    ["t / 2", "tan(t)"],
+    ["sin(t * 4) * t/4", "t"],
+    ["t^2", "abs(t)"],
+    ["100 * cos(t)", "abs(t) / 5"],
+    ["cos(t)^3", "3 * sin(t)^3 + log(t)"],
+    ["tan(t)^3", "5 * sin(t) + log(t)"],
   ];
 
   (() => {
-    let exampleIndex = 0;
+    let exampleIndex = 1;
 
     example.addEventListener("click", () => {
-      const [exX, exY, precision] = examples[exampleIndex];
-      setAndDraw(exX, exY, precision * 100)
+      const [exX, exY] = examples[exampleIndex];
+      setAndDraw(exX, exY)
       exampleIndex = exampleIndex < examples.length - 1
         ? exampleIndex + 1
         : 0;
     });
   })();
 
-  function setAndDraw(exprX, exprY, prec) {
+  function setAndDraw(exprX, exprY) {
     inputX.value = exprX;
     inputY.value = exprY;
-    precision.value = prec;
     draw(exprX, exprY);
   }
 
@@ -244,7 +249,7 @@ function getBasis(unitsPerAxe) {
 function drawCartesian(exprX, exprY, unitsPerAxe, render) {
   const components = [];
 
-  for (let t = -10000; t < 10000; t += 0.1) {
+  for (let t = -1000; t < 1000; t += 0.05) {
     const x = exprX.eval({ t });
     const y = exprY.eval({ t });
     components.push(x, y);
@@ -256,7 +261,7 @@ function drawCartesian(exprX, exprY, unitsPerAxe, render) {
 function drawPolar(exprX, exprY, unitsPerAxe, render) {
   const components = [];
 
-  for (let t = -10000; t < 10000; t += 0.05) {
+  for (let t = -1000; t < 1000; t += 0.01) {
     const angle = exprX.eval({ t });
     const radius = exprY.eval({ t });
 

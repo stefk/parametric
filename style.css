@@ -33,25 +33,6 @@ input[type=text] {
   border: solid 1px #747474;
 }
 
-input[type=range] {
-  width: 100px;
-  vertical-align: middle;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  height: 10px;
-  background: black;
-  border: solid 1px #747474;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  height: 26px;
-  width: 14px;
-  border-radius: 2px;
-  border: solid 1px #747474;
-  margin-top: -7px;
-}
-
 button {
   color: #747474;
   background: black;
